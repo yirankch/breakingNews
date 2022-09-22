@@ -28,7 +28,8 @@ boyd {
 
 .loginAndRegbox .title-box {
     /* 记录2 背景知识点复习 */
-    /* width: 170px; */
+    /* display: inline-block; */
+    /* width: 400px; */
     height: 60px;
     /* text-align: center; */
     /* vertical-align: middle; */

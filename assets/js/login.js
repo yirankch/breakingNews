@@ -30,7 +30,7 @@ $(function () {
         // 获取form表单输入框
         var data = $(this).serialize()
         // 使用ajax post请求提交注册表单
-        $.post('http://www.liulongbin.top:3007/api/reguser', data, function (res) {
+        $.post('/api/reguser', data, function (res) {
             // 判断提交是否正常
             if (res.status !== 0) {
                 return layer.msg(res.message, {
