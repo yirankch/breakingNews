@@ -3,7 +3,7 @@
 // 在这个函数中,可以拿到我们给Ajax提供的配置对象
 $.ajaxPrefilter(function (options) {
     // 在发起真正的ajax之前,统一拼接请求的跟路径
-    console.log(options.url)
+    // console.log(options.url)
     options.url = 'http://www.liulongbin.top:3007' + options.url
     // 统一设置有token认证的请求
     // 如果url中有/my/
