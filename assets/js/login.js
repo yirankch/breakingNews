@@ -1,5 +1,5 @@
 $(function () {
-    
+
     // 点击注册按钮显示注册 隐藏当前
     $('#link_reg').on('click', function () {
         $('.login-box').hide()
@@ -61,10 +61,7 @@ $(function () {
             data: $(this).serialize(),
             success: function (res) {
                 if (res.status !== 0) {
-                    return layer.msg(res.message, {
-                        icon: 2,
-                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
-                    });
+                    return layer.msg('账号或密码错误!')
                 }
                 layer.msg('登录成功!', {
                     icon: 1,
@@ -79,5 +76,5 @@ $(function () {
             }
         })
     })
-    
+
 }) 

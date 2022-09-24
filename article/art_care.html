@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../assets/css/article/art_care.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <!-- 1.用layui表格 -->
+        <div class="layui-card-header">
+            <span>文章类别</span>
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-sm" id="btnAddCate">添加类别</button>
+        </div>
+        <div class="layui-card-body">
+            <table class="layui-table">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col width="300">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>分类名称</th>
+                        <th>分类别名</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 增加新闻分类弹出框 -->
+    <script type="text/html" id="layAdd">
+        <form class="layui-form" id="formAddCade">
+            <div class="layui-form-item">
+              <label class="layui-form-label">分类名称</label>
+              <div class="layui-input-block">
+                <input type="text" name="name" required  lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类别名</label>
+                <div class="layui-input-block">
+                  <input type="text" name="alias" required  lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <button class="layui-btn" lay-submit lay-filter="formDemo">确认添加</button>
+                  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+              </div>
+        </form>
+    </script>
+
+    <!-- 修改文章分类弹出层 -->
+    <script type="text/html" id="layEdit">
+        <form class="layui-form" id="formEditCade" lay-filter="formEditCade">
+            <!-- 隐藏域保存Id的值 忘记这里的Id也要大写了 -->
+            <input type="hidden" name="Id">
+            <div class="layui-form-item">
+              <label class="layui-form-label">分类名称</label>
+              <div class="layui-input-block">
+                <input type="text" name="name" required  lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类别名</label>
+                <div class="layui-input-block">
+                  <input type="text" name="alias" required  lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <button class="layui-btn" lay-submit lay-filter="formDemo">确认修改</button>
+                </div>
+              </div>
+        </form>
+    </script>
+    <!-- 3.定义template模板 -->
+    <script type="text/html" id="tmp_artCate">
+        <!-- 使用each语句res中data的数据 -->
+    {{each data}}
+    <tr>
+        <td>{{$value.name}}</td>
+        <td>{{$value.alias}}</td>
+        <td>
+            <button type="button" class="layui-btn layui-btn-xs" id="btnEdit" data-edit="{{$value.Id}}">编辑</button>
+            <button type="button" class="layui-btn layui-btn-danger layui-btn-xs" id="btnDelete" data-edit="{{$value.Id}}">删除</button>
+        </td>
+    </tr>
+    {{/each}}
+    </script>
+    <!-- 引入tempate模板 -->
+    <script src="../assets/lib/template-web.js"></script>
+    <!-- 引入layui -->
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../assets/lib/jquery.js"></script>
+    <!-- 引入jQuery ajax定义的公共属性 -->
+    <script src="../assets/js/baseAPI.js"></script>
+    <!-- 引入自己的样式 -->
+    <script src="../assets/js/article/art_cate.js"></script>
+</body>
+
+</html>

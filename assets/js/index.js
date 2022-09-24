@@ -34,17 +34,18 @@ function getUserInfo() {
         // },
         success: function (res) {
             if (res.status !== 0) {
-                console.log(res)
+                // console.log(res)
                 return layui.layer.msg('获取用户失败!')
             }
             // console.log(res)
             // 渲染用户头像
             renderAvatar(res.data)
         }
-        
+
     })
 }
 
+// 渲染头像
 function renderAvatar(user) {
     // 1.获取用户的昵称
     var name = user.nickname || user.username
