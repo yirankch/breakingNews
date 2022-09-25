@@ -37,10 +37,10 @@ $(function () {
             method: 'POST',
             url: '/my/updatepwd',
             // 使用serialize获取表单数据
-            // data:$(this).serialize(),
-            success: function (res) {
-                console.log(res.message)
-                if (res.status !== 0) {
+            data:$(this).serialize(),
+            success: function(res){
+                console.log(res)
+                if(res.status !== 0) {
                     // console.log(res.message)
                     return layui.layer.msg('密码修改失败!')
                 }
