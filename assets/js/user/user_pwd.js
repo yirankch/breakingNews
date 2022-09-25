@@ -36,7 +36,7 @@ $(function () {
             method: 'POST',
             url: '/my/updatepwd',
             // 使用serialize获取表单数据
-            // data:$(this).serialize(),
+            data:$(this).serialize(),
             success: function(res){
                 console.log(res)
                 if(res.status !== 0) {
