@@ -25,21 +25,22 @@ $(function () {
         }
     })
 
+    console.log(1)
     // 确认修改密码功能
     // 给表单提交设置监听
-    $('.layui-form').on('submit',function(e){
+    $('.layui-form').on('submit', function (e) {
         // 取消表单的默认提交事件
         e.preventDefault()
-
+        console.log(2)
         // 使用ajax请求提交表单
         $.ajax({
             method: 'POST',
             url: '/my/updatepwd',
             // 使用serialize获取表单数据
             // data:$(this).serialize(),
-            success: function(res){
-                console.log(res)
-                if(res.status !== 0) {
+            success: function (res) {
+                console.log(res.message)
+                if (res.status !== 0) {
                     // console.log(res.message)
                     return layui.layer.msg('密码修改失败!')
                 }

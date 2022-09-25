@@ -16,8 +16,8 @@ $(function () {
     var laypage = layui.laypage
     // 定义一个查询的参数对象，将请求数据的时候，
     var q = {
-        pagenum: 1,  // 分页第一次显示的页码
-        pagesize: 2, // 一页显示几条数据
+        pagenum: 2,  // 分页第一次显示的页码
+        pagesize: 4, // 一页显示几条数据
         cate_id: '', // 新闻类别的id
         state: ''    // 新闻类别的状态
     }

@@ -77,4 +77,7 @@ $(function () {
         })
     })
 
+    $('.btn-edit').on(click, function () {
+        return layer.msg('功能暂未开放!')
+    })
 }) 
